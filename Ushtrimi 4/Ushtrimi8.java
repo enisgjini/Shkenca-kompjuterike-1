@@ -8,13 +8,13 @@ public class Ushtrimi8 {
         while (true) {
             System.out.println("Shkruani fjalinë tuaj: ");
             fjalia = input.nextLine();
-            if (fjalia.contains("CSE")) {
+            if (fjalia.contains("SHKI")) {
                 numriFjalive++;
             }
             if (fjalia.equals("SENTINEL") || fjalia.equals("EXIT")) {
                 break;
             }
         }
-        System.out.println("Numri i fjalive që përmbajnë CSE: " + numriFjalive);
+        System.out.println("Numri i fjalive që përmbajnë SHKI: " + numriFjalive);
     }
 }

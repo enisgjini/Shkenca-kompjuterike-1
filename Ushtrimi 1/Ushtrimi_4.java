@@ -1,45 +1,27 @@
-
 import java.util.Scanner;
 
 public class Ushtrimi_4 {
-
     public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int numri, counter = 0, pozitive = 0, cifra3 = 0, cift = 0;
 
-        Scanner in = new Scanner(System.in);
+        System.out.println("Shtypni numrat (Shtypni -5555 per te ndaluar):");
 
-        int nrPare, numPozitiv, numCift, numTreshifror, counter;
-
-        nrPare = 0;
-        numPozitiv = 0;
-        numCift = 0;
-        numTreshifror = 0;
-        counter = 0;
-
-        System.out.println("Ju lutem, shkruani numra te plote 32-bit. Numri -5555 eshte sentinel (perfundim)");
-
-        while (nrPare != -5555) {
-            nrPare = in.nextInt();
-            counter++;
-
-            if (nrPare > 0) {
-                numPozitiv++;
+        do {
+            numri = input.nextInt();
+            if (numri != -5555) {
+                counter++;
+                cift += numri % 2 == 0 ? 1 : 0;
+                pozitive += numri > 0 ? 1 : 0;
+                cifra3 += numri >= 100 && numri <= 999 ? 1 : 0;
             }
+        } while (numri != -5555);
 
-            if (nrPare % 2 == 0) {
-                numCift++;
-            }
-
-            if (nrPare > 99 && nrPare < 999) {
-                numTreshifror++;
-            }
-        }
-
-        if (counter > 1) {
-            System.out.println("Jane shtypur gjithsej " + (counter - 1) + " numra dhe " + numCift
-                    + " prej tyre kane qene cift, " + numPozitiv + " prej tyre kane qene pozitiv dhe " + numTreshifror
-                    + " prej tyre kane qene numra tre-shifror.");
-        } else {
+        if (counter == 0) {
             System.out.println("Nuk eshte shtypur asnje numer!");
+        } else {
+            System.out.println("Jane shtypur gjithsej " + counter + " numra dhe " + cift + " prej tyre jane cift, "
+                    + pozitive + " prej tyre jane pozitive dhe " + cifra3 + " prej tyre jane 3 shifrore.");
         }
     }
 }
